@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Booking - Cliff Airlines</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Cliff Airlines - Book Your Flight</h1>
+      <p>Experience the skies with comfort and reliability!</p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Why Fly with Cliff Airlines?</h2>
+        <ul>
+          <li>Complimentary in-flight meals and beverages</li>
+          <li>Priority boarding for premium members</li>
+          <li>Spacious seating with extra legroom</li>
+          <li>Free Wi-Fi on all international flights</li>
+          <li>Earn miles with every booking</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Flight Schedule</h2>
+        <table>
+          <caption>
+            Daily Flights from Accra (ACC)
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">Destination</th>
+              <th scope="col">Flight Number</th>
+              <th scope="col">Departure Time</th>
+              <th scope="col">Arrival Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nairobi (NBO)</td>
+              <td>SH101</td>
+              <td>08:00 AM</td>
+              <td>08:30 PM</td>
+            </tr>
+            <tr>
+              <td>Johannesburg (JNB)</td>
+              <td>SH202</td>
+              <td>01:00 PM</td>
+              <td>04:00 PM</td>
+            </tr>
+            <tr>
+              <td>Addis Ababa (ADD)</td>
+              <td>SH303</td>
+              <td>06:00 PM</td>
+              <td>05:00 AM</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Our Fleet</h2>
+        <figure>
+          <img
+            src="./img/cliffairlines.png"
+            alt="Cliff Airlines modern jet in flight"
+            width="500"
+            height="400"
+          />
+          <figcaption>
+            Our state-of-the-art Airbus A350, ready to take you to your
+            destination.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h2 id="booking">Book Your Flight</h2>
+        <form action="/submit-booking" method="post" novalidate>
+          <fieldset>
+            <legend>Passenger Information</legend>
+            <label for="full-name">Full Name</label>
+            <input
+              type="text"
+              id="full-name"
+              name="full-name"
+              required
+              minlength="2"
+              maxlength="50"
+              placeholder="John Doe"
+              pattern="[A-Za-z\s]{2,50}"
+              title="Name should contain only letters and spaces, 2-50 characters."
+            />
+
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="you@example.com"
+              autocomplete="email"
+            />
+
+            <label for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+233-555-555-5555"
+              pattern="\+?[1-9]\d{1,14}"
+              title="Enter a valid phone number (e.g., +233-555-555-5555)"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Flight Details</legend>
+            <label for="destination">Destination</label>
+            <select id="destination" name="destination" required>
+              <option value="">Select a destination</option>
+              <option value="NBO">Nairobi (NBO)</option>
+              <option value="JNB">Johannesburg (JNB)</option>
+              <option value="ADD">Addis Ababa (ADD)</option>
+            </select>
+
+            <label for="departure-date">Departure Date</label>
+            <input
+              type="date"
+              id="departure-date"
+              name="departure-date"
+              required
+              min="2025-08-04"
+            />
+
+            <label for="passengers">Number of Passengers</label>
+            <input
+              type="number"
+              id="passengers"
+              name="passengers"
+              required
+              min="1"
+              max="10"
+              value="1"
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Additional Preferences</legend>
+            <label for="seat-preference">Seat Preference</label>
+            <select id="seat-preference" name="seat-preference">
+              <option value="window">Window</option>
+              <option value="aisle">Aisle</option>
+              <option value="no-preference" selected>No Preference</option>
+            </select>
+
+            <label for="special-requests">Special Requests</label>
+            <input
+              type="text"
+              id="special-requests"
+              name="special-requests"
+              maxlength="200"
+              placeholder="e.g., Vegetarian meal"
+            />
+          </fieldset>
+
+          <input type="submit" value="Book Flight" />
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Cliff Airlines. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
